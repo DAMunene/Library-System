@@ -16,6 +16,14 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
+
 TEMPLATE_DIR= os.path.join(BASE_DIR, "templates")
 
 
@@ -26,9 +34,9 @@ TEMPLATE_DIR= os.path.join(BASE_DIR, "templates")
 SECRET_KEY = 'django-insecure-l$mds%-x-q)9kst$=x((2d44*$+kem1-krx8dg$loqxd_@x@sm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,12 +87,28 @@ WSGI_APPLICATION = 'brm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+'''
+
+# Render postgreSQL db live
+import dj_database_url
+
+# Load environment variables from .env file
+
+# Database configuration
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
+
+
 
 
 # Password validation
