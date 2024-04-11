@@ -1,5 +1,5 @@
 # Library-System
-A Library Management System focusing on the CRUD operations
+A Library Management System focusing on the CRUD operations.....
 I'm thrilled to share our recent advancements in optimizing our Book Record Management system using Django. In just a few steps, we've enhanced the user experience and streamlined operations for managing our book records.
 
 Firstly, we focused on simplifying the process of adding new books to our database. With a concise yet powerful Django view, we effortlessly captured user input and stored it securely in our system. This not only saved time but also ensured accurate data entry with minimal effort.
