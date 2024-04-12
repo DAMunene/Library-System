@@ -87,25 +87,43 @@ WSGI_APPLICATION = 'brm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-'''
+# '''
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# '''
 
 # Render postgreSQL db live
-import dj_database_url
+# import dj_database_url
 
 # Load environment variables from .env file
 
 # Database configuration
-import dj_database_url
+# import dj_database_url
 
+# database_url = os.environ.get('DATABASE_URL')
+
+# Decode bytes to string if necessary
+# if isinstance(database_url, bytes):
+    # database_url = database_url.decode('utf-8')
+
+# Parse the database URL
+# DATABASES = {
+    # 'default': dj_databxcase_url.parse(database_url)
+# }
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    "default": {
+        "ENGINE": 'django.db.backends.postgresql',
+        "NAME" : 'librarydb_egol',
+        "USER": 'librarydb_egol_user',
+        "PASSWORD": 'q8XbslG7jaN0nB5UW3UrpINdtauzVqiK',
+        "HOST": 'dpg-cobv9bmn7f5s73fvt98g-a.oregon-postgres.render.com/librarydb_egol',
+        "PORT": '5432',
+
+    }
 }
 
 
