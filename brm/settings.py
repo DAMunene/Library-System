@@ -114,6 +114,7 @@ WSGI_APPLICATION = 'brm.wsgi.application'
 # DATABASES = {
     # 'default': dj_databxcase_url.parse(database_url)
 # }
+
 DATABASES = {
     "default": {
         "ENGINE": 'django.db.backends.postgresql',
